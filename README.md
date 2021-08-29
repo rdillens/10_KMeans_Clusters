@@ -1,7 +1,7 @@
 # 10_KMeans_Clusters
 Cluster cryptocurrencies by their performance over different time periods using the KMeans algorithm.
 
-<!-- **The application is published [here](http://rdillens.github.io/10_KMeans_Clusters) as a github project page, try it yourself!** -->
+**The application is published [here](http://rdillens.github.io/10_KMeans_Clusters) as a github project page, try it yourself!**
 
 ---
 ## Installation Instructions
