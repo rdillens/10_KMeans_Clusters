@@ -1,6 +1,6 @@
 # Python native libraries
 from statistics import mean
-import datetime as dt
+# import datetime as dt
 # from path import Path
 from time import sleep
 from numpy import sort
@@ -10,7 +10,7 @@ import logging
 # Conda libraries
 import pandas as pd
 from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
+# from sklearn.decomposition import PCA
 # from bokeh.models import HoverTool
 
 # External libraries
@@ -68,9 +68,11 @@ def run():
         choice_list.append(choice_string)
     selected_k = round(elbow_df.iloc[choice_list.index(questionary.select("Choose K", choices=choice_list).ask())]['k'])
     logging.debug(selected_k)
+
     model = KMeans(n_clusters=selected_k, random_state=0)
     model.fit(scaled_df)
     clusters = model.predict(scaled_df)
+
     scaled_df['cluster'] = clusters
     logging.info(scaled_df.columns.tolist())
 
