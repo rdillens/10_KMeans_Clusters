@@ -1,5 +1,5 @@
 # 10_KMeans_Clusters
-Cluster cryptocurrencies by their performance over different time periods using the KMeans algorithm.
+Cluster assets by their performance over different time periods using the KMeans algorithm.
 
 **The application is published [here](http://rdillens.github.io/10_KMeans_Clusters) as a github project page, try it yourself!**
 
@@ -43,7 +43,11 @@ voila crypto_investments.ipynb
 
 ---
 ## Contributors
-Starter code was given in the Rice FinTech Bootcamp and all modifications were made by Remy Dillenseger.
+This colde is brought to you by Remy Dillenseger.
+
+---
+## Disclaimer
+This code is not to be used for or considered as financial advice.
 
 ---
 ## License
