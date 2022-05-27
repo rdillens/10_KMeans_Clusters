@@ -5,6 +5,7 @@ import sqlalchemy
 import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
 
 # logging.basicConfig(filename='helper_log.txt', level=logging.DEBUG)
 # logging.captureWarnings(capture=True)
@@ -46,8 +47,9 @@ def clean_table(table):
     for feature in list(table.columns):
         features.append(str(feature))
     table.columns = features
-    #Scale data
+    # Scale data
     scaled_data = StandardScaler().fit_transform(table)
+    # Create DataFrame
     scaled_df = pd.DataFrame(
         scaled_data,
         columns=features,
@@ -55,3 +57,14 @@ def clean_table(table):
     scaled_df['ticker'] = table.index
     scaled_df = scaled_df.set_index('ticker')
     return scaled_df
+
+def run_k(df, k):
+    model = KMeans(n_clusters=k, random_state=0)
+    model.fit(df)
+    k_dict = {
+        'k': k,
+        'inertia': model.inertia_,
+        'clusters': model.predict(df),
+        'col_name': f"cluster_k{k}"
+    }
+    return k_dict
